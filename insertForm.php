@@ -33,6 +33,12 @@
             </td>
         </tr>
         <tr>
+            <td><label for="pilt">Pildi link</label></td>
+            <td>
+                <input type="text" name="pilt" id="pilt">
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <input type="submit" value="Lisa">
             </td>

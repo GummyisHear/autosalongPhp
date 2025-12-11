@@ -47,8 +47,15 @@ nav a:hover {
     text-align: center;
 }
 
-.price-table, .admin-table {
+.price-table {
     width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    color: white;
+}
+.admin-table {
+    width: 50%;
     margin: auto;
     border-collapse: collapse;
     background: #1a1a1a;
@@ -65,7 +72,7 @@ nav a:hover {
     text-decoration: none;
     color: white;
     background-color: #00aaff;
-    padding: 5px 10px;
+    padding: 5px 30px;
     border-radius: 5px;
     border: 0;
     cursor: pointer;
@@ -84,4 +91,31 @@ form {
 
 footer {
     text-align: center;
+}
+
+.picture-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.picture-grid a {
+    display: block;
+    width: 250px;
+    height: 250px;
+}
+
+.picture-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+input[type=text], input[type=number] {
+    font-size: 16px;
+    padding: 5px 15px;
+    width: 250px;
 }

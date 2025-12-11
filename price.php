@@ -1,7 +1,8 @@
+<?php if (isset($_GET['code'])) {die(highlight_file(__FILE__, 1));}?>
 <?php
 require('config.php');
 global $conn;
-$query = $conn->prepare("SELECT * FROM cars");
+$query = $conn->prepare("SELECT id, model, description, year, mileage, price FROM cars");
 $query->bind_result($id, $nimi, $kirjeldus, $year, $mileage, $price);
 $query->execute();
 ?>
@@ -19,6 +20,7 @@ $query->execute();
     <nav>
         <a href="index.php">Avaleht</a>
         <a href="price.php">Autod</a>
+        <a href="picture.php">Pildigalerii</a>
         <a href="admin.php">Admin</a>
     </nav>
 </header>

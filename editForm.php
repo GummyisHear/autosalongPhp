@@ -1,11 +1,14 @@
 <?php
 require ('config.php');
 global $conn;
-$query = $conn->prepare("SELECT * FROM cars WHERE id=?");
+
 $editId = $_REQUEST['edit'];
+
+$query = $conn->prepare("SELECT id, model, description, year, mileage, price, image FROM cars WHERE id=?");
+$query->bind_result($id, $model, $description, $year, $mileage, $price, $image);
 $query->bind_param('i', $editId);
-$query->bind_result($id, $nimi, $kirjeldus, $year, $mileage, $price);
 $query->execute();
+$query->fetch();
 ?>
 
 <form action="admin.php">
@@ -15,13 +18,13 @@ $query->execute();
         <tr>
             <td><label for="mudel">Mudel</label></td>
             <td>
-                <input type="text" name="mudel" id="mudel" value="<?=$nimi?>">
+                <input type="text" name="mudel" id="mudel" value="<?=$model?>">
             </td>
         </tr>
         <tr>
             <td><label for="kirjeldus">Kirjeldus</label></td>
             <td>
-                <input type="text" name="kirjeldus" id="kirjeldus" value="<?=$kirjeldus?>">
+                <input type="text" name="kirjeldus" id="kirjeldus" value="<?=$description?>">
             </td>
         </tr>
         <tr>
@@ -39,7 +42,13 @@ $query->execute();
         <tr>
             <td><label for="hind">Hind</label></td>
             <td>
-                <input type="text" value="0" name="hind" id="hind" value="<?=$price?>">
+                <input type="text" name="hind" id="hind" value="<?=$price?>">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="pilt">Pildi link</label></td>
+            <td>
+                <input type="text" name="pilt" id="pilt" value="<?=$image?>">
             </td>
         </tr>
         <tr>

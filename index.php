@@ -1,3 +1,4 @@
+<?php if (isset($_GET['code'])) {die(highlight_file(__FILE__, 1));}?>
 <!DOCTYPE html>
 <html lang="et">
 <head>
@@ -11,6 +12,7 @@
     <nav>
         <a href="index.php">Avaleht</a>
         <a href="price.php">Autod</a>
+        <a href="picture.php">Pildigalerii</a>
         <a href="admin.php">Admin</a>
     </nav>
 </header>
